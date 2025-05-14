@@ -88,6 +88,7 @@ public class SyncTest
             double averageResponseTimeMs = responseTimes.Any() ? responseTimes.Average() : 0;
             int successfulRequests = responseTimes.Count;
             int totalRequests = VirtualUsers; // In this simplified scenario
+            errorCount = totalRequests - successfulRequests;
             double errorRate = totalRequests > 0 ? (double)errorCount / totalRequests * 100 : 0;
             double requestsPerSecond =
                 duration.TotalSeconds > 0 ? successfulRequests / duration.TotalSeconds : 0;
@@ -120,6 +121,7 @@ public class SyncTest
             double averageResponseTimeMs = responseTimes.Any() ? responseTimes.Average() : 0;
             int successfulRequests = responseTimes.Count;
             int totalRequests = VirtualUsers; // In this simplified scenario
+            errorCount = totalRequests - successfulRequests;
             double errorRate = totalRequests > 0 ? (double)errorCount / totalRequests * 100 : 0;
             double requestsPerSecond =
                 duration.TotalSeconds > 0 ? successfulRequests / duration.TotalSeconds : 0;
